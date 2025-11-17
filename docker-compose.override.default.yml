@@ -1,0 +1,13 @@
+services:
+  api:
+    # Prevent automatically stop. Should be used for development process!
+    # command: tail -f /dev/null
+    ports:
+      - "3000:3000"
+    restart: always
+  app:
+    # Prevent automatically stop. Should be used for development process!
+    # command: tail -f /dev/null
+    ports:
+      - "8080:5173"
+    restart: always

@@ -1,0 +1,10 @@
+FROM node:24.10.0-alpine
+ARG DIR_PATH=/opt/app
+
+
+WORKDIR $DIR_PATH
+RUN apk --no-cache add curl git
+
+USER node
+
+CMD ["sh", "-c", "npm install && npm run dev -- --host"]

@@ -1,0 +1,29 @@
+services:
+  api:
+    init: true
+    container_name: ${COMPOSE_PROJECT_NAME}_api
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.api.${PROJECT_ENV}
+    volumes:
+      - ./api:/opt/app:z
+    ports:
+      - "3000:3000"
+    networks:
+      - front
+  app:
+    init: true
+    container_name: ${COMPOSE_PROJECT_NAME}_app
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.app.${PROJECT_ENV}
+    volumes:
+      - ./app:/opt/app:z
+    ports:
+      - "8080:5173"
+    networks:
+      - front
+
+networks:
+  front:
+    driver: bridge

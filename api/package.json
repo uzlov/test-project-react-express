@@ -1,0 +1,52 @@
+{
+  "name": "flumotion-test-api",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsx ./scripts/build.ts && tsc-alias -p tsconfig.prod.json",
+    "clean-install": "rm -rf ./node_modules && rm -r package-lock.json && npm i",
+    "dev": "node --env-file=config/.env.development --import=tsx ./src",
+    "dev:hot": "node --watch --env-file=config/.env.development --import=tsx ./src",
+    "lint": "eslint .",
+    "start": "node --env-file=config/.env.production ./dist",
+    "test": "NODE_ENV=test vitest",
+    "type-check": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "inserturlparams": "^2.0.5",
+    "jet-env": "^1.1.4",
+    "jet-logger": "^2.0.1",
+    "jet-paths": "^1.1.0",
+    "jet-validators": "^1.4.3",
+    "jsonfile": "^6.2.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jsonfile": "^6.1.4",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.1",
+    "eslint-plugin-n": "^17.23.1",
+    "fs-extra": "^11.3.2",
+    "jiti": "^2.6.1",
+    "supertest": "^7.1.4",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^4.0.9"
+  }
+}
